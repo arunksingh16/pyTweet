@@ -8,11 +8,14 @@ import os
 import tweepy as tw
 import pandas as pd
 
-
-class tdaClass():
+# According to PEP8: Class names must follow CamelCase naming
+class TdaClass():
     # slots provide a special mechanism to reduce the size of objects.It is a concept of memory optimisation on objects.
     
     __slots__ = ['query','actName','tweetCount','consumer_key','consumer_secret','access_token','access_token_secret']
+
+    def __init__(self) -> None:
+        pass
 
     def createAPIObj(consumer_key,consumer_secret,access_token,access_token_secret):
         auth = tw.OAuthHandler(consumer_key, consumer_secret)
@@ -22,7 +25,7 @@ class tdaClass():
         return(api)
     
     def tweet_home_tl(consumer_key,consumer_secret,access_token,access_token_secret):
-        api = tdaClass.createAPIObj(consumer_key,consumer_secret,access_token,access_token_secret)
+        api = TdaClass.createAPIObj(consumer_key,consumer_secret,access_token,access_token_secret)
         
         for tweet in api.home_timeline():
             tw_ = tweet.user.screen_name
@@ -30,7 +33,7 @@ class tdaClass():
             print(f"user name {tw_} and the loc is {lo_}")
 
     def get_tw(actName,tweetCount,consumer_key,consumer_secret,access_token,access_token_secret):
-        api = tdaClass.createAPIObj(consumer_key,consumer_secret,access_token,access_token_secret)
+        api = TdaClass.createAPIObj(consumer_key,consumer_secret,access_token,access_token_secret)
 
         """"
             :param actName: Name of account for search
@@ -47,7 +50,7 @@ class tdaClass():
             i = i + 1
 
     def search_tw(query,consumer_key,consumer_secret,access_token,access_token_secret,language="en"):
-        api = tdaClass.createAPIObj(consumer_key,consumer_secret,access_token,access_token_secret)
+        api = TdaClass.createAPIObj(consumer_key,consumer_secret,access_token,access_token_secret)
 
         """"
             :param actName: Name of account for search

@@ -1,6 +1,6 @@
 import os
 import datetime
-from tda.fetchtw import tdaClass
+from tda.fetchtw import TdaClass
 
 # Creating the authentication object
 
@@ -11,6 +11,6 @@ if __name__ == '__main__':
     access_token_secret = "xxxxxx"
     x = datetime.datetime.now()
     print(f"Execution Started : {x}")
-    #tdaClass.get_tw("nytimes",5,consumer_key,consumer_secret,access_token,access_token_secret)
-    #tdaClass.tweet_home_tl(consumer_key,consumer_secret,access_token,access_token_secret)
-    tdaClass.search_tw("hanuman",consumer_key,consumer_secret,access_token,access_token_secret)
+    #TdaClass.get_tw("nytimes",5,consumer_key,consumer_secret,access_token,access_token_secret)
+    #TdaClass.tweet_home_tl(consumer_key,consumer_secret,access_token,access_token_secret)
+    TdaClass.search_tw("hanuman",consumer_key,consumer_secret,access_token,access_token_secret)
